@@ -1,0 +1,59 @@
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+    <title>Vue App</title>
+  </head>
+
+  <body>
+    <div id="app">
+      <radio-group
+        name="radio-group"
+        :options="options"
+      ></radio-group>
+    </div>
+
+    <script>
+      Vue.component("select-box", {
+        props: ["name", "options"],
+        template: `
+          <select :name="name">
+            <option 
+              v-for="option in options"
+              :value="option.value"
+            >{{ option.label }}</option>
+          </select>
+        `
+      });
+
+      Vue.component("radio-group", {
+        props: ["name", "options"],
+        template: `
+          <div>
+            <div v-for="option in options">
+              <input type="radio"             
+                :name="name"
+                :value="option.value"
+              >{{ option.label }}
+            </div>
+          </div>
+        `
+      });
+
+      var app = new Vue({
+        el: "#app",
+        data: {
+          options: [
+            { label: "A", value: "A" },
+            { label: "B", value: "B" },
+            { label: "C", value: "C" }
+          ],
+          text: "ABC"
+        }
+      });
+    </script>
+  </body>
+</html>
