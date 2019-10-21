@@ -1,19 +1,19 @@
 <template>
   <table>
     <BaseTableHeaderRow :fields="fields"/>
-    <BaseTableRow v-for="(item, index) in items" :key="index" :fields="fields" :item="item"/>
+    <BaseTableDataRow v-for="(item, index) in items" :key="index" :fields="fields" :item="item"/>
   </table>
 </template>
 
 <script>
 import BaseTableHeaderRow from "./BaseTableHeaderRow.vue"
-import BaseTableRow from "./BaseTableRow.vue"
+import BaseTableDataRow from "./BaseTableDataRow.vue"
 
 export default {
   name: "BaseTable",
   components: {
     BaseTableHeaderRow,
-    BaseTableRow
+    BaseTableDataRow
   },
   props: {
     fields: Array,

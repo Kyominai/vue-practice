@@ -4,7 +4,7 @@
 
 <script>
 export default {
-  name: "BaseTableCell",
+  name: "BaseTableDataCell",
   props: {
     field: Object,
     value: null

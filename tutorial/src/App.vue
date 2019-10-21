@@ -4,8 +4,8 @@
     <BaseComboBox :options="options"/>
     <BaseDateBox/>
     <BaseTextBox/>
-    <DataTable :fields="fields" :items="items"/>
-    <DataGrid :fields="fields" :item="item"/>
+    <BaseTable :fields="fields" :items="items"/>
+    <BaseGrid :fields="fields" :item="item"/>
   </div>
 </template>
 
@@ -14,8 +14,8 @@ import BaseCheckBox from "./components/BaseCheckBox"
 import BaseComboBox from "./components/BaseComboBox"
 import BaseDateBox from "./components/BaseDateBox"
 import BaseTextBox from "./components/BaseTextBox"
-import DataTable from "./components/DataTable"
-import DataGrid from "./components/DataGrid"
+import BaseTable from "./components/BaseTable"
+import BaseGrid from "./components/BaseGrid"
 
 export default {
   name: 'app',
@@ -24,8 +24,8 @@ export default {
     BaseComboBox,
     BaseDateBox,
     BaseTextBox,
-    DataTable,
-    DataGrid
+    BaseTable,
+    BaseGrid
   },
   data: function() {
     return {
